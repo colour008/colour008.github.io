@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Vue学习之--安装(npm方法) | 夏雪无痕の博客</title><meta name="author" content="colour008,849815609@qq.com"><meta name="copyright" content="colour008"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Vue学习之–安装(npm方法)  前言 首先，先列出我们接下来需要的东西： node.js环境（npm包管理器） vue-cli 脚手架构建工具 cnpm npm的淘宝镜像  一、安装node.js 从node.js官网下载并安装node，安装过程很简单，一直点下一步就ok了，安装完之后,输入node -v 命令，查看node的版本，若出现相应的版本号，则说明你安装成功了。安装成功后，运行代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue学习之--安装(npm方法)">
+<meta property="og:url" content="https://colour008.gitee.io/2023/02/02/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8B--%E5%AE%89%E8%A3%85(npm%E6%96%B9%E6%B3%95)/index.html">
+<meta property="og:site_name" content="夏雪无痕の博客">
+<meta property="og:description" content="Vue学习之–安装(npm方法)  前言 首先，先列出我们接下来需要的东西： node.js环境（npm包管理器） vue-cli 脚手架构建工具 cnpm npm的淘宝镜像  一、安装node.js 从node.js官网下载并安装node，安装过程很简单，一直点下一步就ok了，安装完之后,输入node -v 命令，查看node的版本，若出现相应的版本号，则说明你安装成功了。安装成功后，运行代码">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://colour008.gitee.io/img/0.png">
+<meta property="article:published_time" content="2023-02-02T10:00:56.000Z">
+<meta property="article:modified_time" content="2023-02-13T04:08:56.470Z">
+<meta property="article:author" content="colour008">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://colour008.gitee.io/img/0.png"><link rel="shortcut icon" href="/favicon.png"><link rel="canonical" href="https://colour008.gitee.io/2023/02/02/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8B--%E5%AE%89%E8%A3%85(npm%E6%96%B9%E6%B3%95)/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="codeva-Mq1gA8BE4N"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?87a78bcc82c50e240878429e18696cc5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Vue学习之--安装(npm方法)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-13 12:08:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_3876284_xg4p9mk75a.css"><meta name="generator" content="Hexo 6.3.0"></head><body><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/0.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="夏雪无痕の博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/logo.png"/></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Vue学习之--安装(npm方法)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-02T10:00:56.000Z" title="发表于 2023-02-02 18:00:56">2023-02-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-13T04:08:56.470Z" title="更新于 2023-02-13 12:08:56">2023-02-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Vue学习之--安装(npm方法)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="vue学习之安装npm方法"><a class="markdownIt-Anchor" href="#vue学习之安装npm方法"></a> Vue学习之–安装(npm方法)</h1>
+<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>首先，先列出我们接下来需要的东西：</p>
+<p>node.js环境（npm包管理器）<br />
+vue-cli 脚手架构建工具<br />
+cnpm npm的淘宝镜像</p>
+<h2 id="一-安装nodejs"><a class="markdownIt-Anchor" href="#一-安装nodejs"></a> 一、安装<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">node.js</a></h2>
+<p>从node.js官网下载并安装node，安装过程很简单，一直点下一步就ok了，安装完之后,输入<code>node -v</code> 命令，查看node的版本，若出现相应的版本号，则说明你安装成功了。安装成功后，运行代码结果如下（示例）：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/02/02/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8B--%E5%AE%89%E8%A3%85(npm%E6%96%B9%E6%B3%95)/1674009219083-eff2e78c-7613-45f9-ae73-1fd0cbda9da7.png" class="" title="图1">
+<p>npm包管理器，是集成在node中的，所以安装了node也就有了npm,直接输入 <code>npm -v</code> 命令，显示npm的版本信息。安装成功后，运行代码结果如下（示例）：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/02/02/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8B--%E5%AE%89%E8%A3%85(npm%E6%96%B9%E6%B3%95)/1674009387584-44248509-9067-4f11-ac44-d5ffee5bc231.png" class="" title="图2">
+<p>到目前为止，node的环境已经安装完成，npm 包管理器也有了，由于有些npm资源被屏蔽或者是国外资源的原因，经常会导致npm安装依赖包的时候失败，所以我们还需要npm的国内镜像----cnpm。</p>
+<h2 id="二-安装cnpm"><a class="markdownIt-Anchor" href="#二-安装cnpm"></a> 二、安装cnpm</h2>
+<p>在命令行中输入 <code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code> ，然后等待，没报错表示安装成功。安装成功后，运行代码结果如下（示例）：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/02/02/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8B--%E5%AE%89%E8%A3%85(npm%E6%96%B9%E6%B3%95)/1674009500245-2ffcef85-8bcc-45d1-a84c-21264a1495ad.png" class="" title="图3">
+<p>完成之后，我们就可以用cnpm代替npm来安装依赖包了。如果想进一步了解cnpm的，查看淘宝npm镜像官网。</p>
+<h2 id="三-安装vue-脚手架构建工具"><a class="markdownIt-Anchor" href="#三-安装vue-脚手架构建工具"></a> 三、安装vue 脚手架构建工具</h2>
+<p>在命令行中运行命令，最新稳定版 <code>npm install -g @vue/cli</code>，然后等待安装完成。</p>
+<p>是否安装成功：<code>vue -V</code>，安装成功后，运行代码结果如下（示例）：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/02/02/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8B--%E5%AE%89%E8%A3%85(npm%E6%96%B9%E6%B3%95)/1674009566181-4f24d0d9-83a0-4334-b375-018ff7db8ae7.png" class="" title="图4">
+<h2 id="四-创建vue工程项目"><a class="markdownIt-Anchor" href="#四-创建vue工程项目"></a> 四、创建vue工程项目</h2>
+<h3 id="一基于命令行的方式创建vue项目"><a class="markdownIt-Anchor" href="#一基于命令行的方式创建vue项目"></a> （一）基于命令行的方式创建vue项目</h3>
+<p>vue caeate project-name</p>
+<h3 id="二基于图形化界面的方式创建vue项目"><a class="markdownIt-Anchor" href="#二基于图形化界面的方式创建vue项目"></a> （二）基于图形化界面的方式创建vue项目</h3>
+<p>vue ui</p>
+<h3 id="三开始创建项目"><a class="markdownIt-Anchor" href="#三开始创建项目"></a> （三）开始创建项目</h3>
+<p>1.在终端中输入<code>vue create vue_project_01</code>，按下回车开始创建项目；</p>
+<p>2.此时会出现两个选项询问你需要安装哪些功能：</p>
+<p>第一项是默认方式创建vue项目，第二项是手动选择功能创建vue项目；</p>
+<p>按键盘↑或↓来选择；</p>
+<p>选择手动模式；</p>
+<p>3.此时让你手动选择需要安装的功能 按空格键选择 选中的功能前面会带有*号 选择完毕之后按回车进入下一步操作；<br />
+4.如果选择了vue-router的话会弹出一个选项，问你是否需要安装历史模式的路由，我选否因为要用哈希模式的路由；</p>
+<p>5.又弹出一个提示让你选择Eslint的语法版本，选择标准版本就行；</p>
+<p>6.又又弹出一个提示框问你什么时候进行es的语法校验，选择lint on save；</p>
+<p>7.又又又弹出一个提示问你这些工具的配置文件怎么创建，第一个选项是创建单独的配置文件，第二个选项是把这些配置文件都放到package.json中；</p>
+<p>8.又又又又弹出一个提示问你要不要把刚才所做的那些设置保存为一个模板供后续创建其他项目的时候使用；</p>
+<p>9.漫长的等待。。。</p>
+<p>正在初始化项目的基本结构、创建一些模板，下载一些包。。。。</p>
+<p>10.创建完成后提示我们进入到项目的根目录中，并且运行<code>npm run serve</code> 把项目运行起来；</p>
+<p>11.在浏览器中输入<a target="_blank" rel="noopener" href="http://localhost:8080/#/">http://localhost:8080/#/</a> 就可以访问到你创建的第一个vue项目了。</p>
+<h2 id="五-注意事项"><a class="markdownIt-Anchor" href="#五-注意事项"></a> 五、注意事项</h2>
+<p>工程项目初始化完成后，运行<code>npm run serve</code>时，可能会提示vue无法加载文件C:\Users\Administrator\AppData\Roaming\npm\vue.project-name，因为在此系统上禁止运行脚本。</p>
+<p>这是因为在此系统上禁止运行脚本……解决办法如下：</p>
+<p>1.管理员身份运行PowerShell（命令提示符，来源于Linux的命令提示符也叫Shell）：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/02/02/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8B--%E5%AE%89%E8%A3%85(npm%E6%96%B9%E6%B3%95)/1674010710320-8074ef07-c617-4ef3-9a46-871b5baa4801.png" class="" title="图5">
+<p>2、执行：set-ExecutionPolicy RemoteSigned （签名或运行这些脚本）：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/02/02/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8B--%E5%AE%89%E8%A3%85(npm%E6%96%B9%E6%B3%95)/1674010836248-f2c26089-ac62-4977-89be-135803c3e90b.png" class="" title="图6">
+<p>3.重新运行<code>npm run serve</code>，会成功运行。</p>
+<p>4.vue打包命令</p>
+<p>对当前vue项目进行打包的命令如下: <code>npm run build</code>，打包完成,会输出Build complete并且在vue项目中会生成一个名字为dist的打包文件。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://colour008.gitee.io/">colour008</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://colour008.gitee.io/2023/02/02/Vue%E5%AD%A6%E4%B9%A0%E4%B9%8B--%E5%AE%89%E8%A3%85(npm%E6%96%B9%E6%B3%95)/">https://colour008.gitee.io/2023/02/02/Vue学习之--安装(npm方法)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://colour008.gitee.io" target="_blank">夏雪无痕の博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Vue/">Vue</a><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-63e47e9760ff8219" async="async"></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/02/04/OpenWrt%E6%89%A9%E5%AE%B9Overlay/" title="OpenWrt扩容Overlay"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">OpenWrt扩容Overlay</div></div></a></div><div class="next-post pull-right"><a href="/2023/02/01/Hexo%E9%80%89%E6%8B%A9%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84Markdown%E6%B8%B2%E6%9F%93%E5%99%A8/" title="Hexo选择更高级的Markdown渲染器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hexo选择更高级的Markdown渲染器</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/0.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">colour008</div><div class="author-info__description">一个喜欢编程和爱折腾的小白💻</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/colour008"><i></i><span>关注我的Gitee</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/colour008" target="_blank" title="Github"><i class="fa-brands fa-github"></i></a><a class="social-icon" href="/img/%E5%BE%AE%E4%BF%A1.png" target="_blank" title="微信"><i class="fa-brands fa-weixin"></i></a><a class="social-icon" href="/img/qq.jpg" target="_blank" title="QQ"><i class="fa-brands fa-qq"></i></a><a class="social-icon" href="https://weibo.com/u/5458392887" target="_blank" title="微博"><i class="fa-brands fa-weibo"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎访问夏雪无痕の博客，本人不定期更新编程学习笔记，如文章对您有帮助，还请您收藏转发，谢谢！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%AE%89%E8%A3%85npm%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> Vue学习之–安装(npm方法)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%AE%89%E8%A3%85nodejs"><span class="toc-number">1.2.</span> <span class="toc-text"> 一、安装node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E5%AE%89%E8%A3%85cnpm"><span class="toc-number">1.3.</span> <span class="toc-text"> 二、安装cnpm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E5%AE%89%E8%A3%85vue-%E8%84%9A%E6%89%8B%E6%9E%B6%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7"><span class="toc-number">1.4.</span> <span class="toc-text"> 三、安装vue 脚手架构建工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E5%88%9B%E5%BB%BAvue%E5%B7%A5%E7%A8%8B%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.5.</span> <span class="toc-text"> 四、创建vue工程项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%9F%BA%E4%BA%8E%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E6%96%B9%E5%BC%8F%E5%88%9B%E5%BB%BAvue%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.5.1.</span> <span class="toc-text"> （一）基于命令行的方式创建vue项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%9F%BA%E4%BA%8E%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2%E7%9A%84%E6%96%B9%E5%BC%8F%E5%88%9B%E5%BB%BAvue%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.5.2.</span> <span class="toc-text"> （二）基于图形化界面的方式创建vue项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%BC%80%E5%A7%8B%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.5.3.</span> <span class="toc-text"> （三）开始创建项目</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.6.</span> <span class="toc-text"> 五、注意事项</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/12/LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" title="LeetCode刷题笔记">LeetCode刷题笔记</a><time datetime="2023-02-12T06:00:00.000Z" title="发表于 2023-02-12 14:00:00">2023-02-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/11/C%E8%AF%AD%E8%A8%80%E7%BB%8F%E5%85%B8100%E4%BE%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C语言经典100例学习笔记">C语言经典100例学习笔记</a><time datetime="2023-02-11T10:00:00.000Z" title="发表于 2023-02-11 18:00:00">2023-02-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/05/%E5%A6%82%E4%BD%95%E5%9C%A8VScode%E4%B8%AD%E5%90%AF%E7%94%A8%E4%BD%BF%E7%94%A8%E9%BC%A0%E6%A0%87%E9%80%89%E6%8B%A9%E8%A1%8C%E5%88%97/" title="如何在VScode中启用使用鼠标选择行列">如何在VScode中启用使用鼠标选择行列</a><time datetime="2023-02-05T13:00:00.000Z" title="发表于 2023-02-05 21:00:00">2023-02-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/04/Alist%20%E6%8C%82%E8%BD%BD%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98%E3%80%81%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E3%80%81%E8%BF%85%E9%9B%B7%E4%BA%91%E7%9B%98%E3%80%81123%E7%BD%91%E7%9B%98%E7%AD%89/" title="Alist挂载阿里云盘、百度网盘、迅雷云盘、123网盘等">Alist挂载阿里云盘、百度网盘、迅雷云盘、123网盘等</a><time datetime="2023-02-04T12:00:00.000Z" title="发表于 2023-02-04 20:00:00">2023-02-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/04/OpenWrt%E6%89%A9%E5%AE%B9Overlay/" title="OpenWrt扩容Overlay">OpenWrt扩容Overlay</a><time datetime="2023-02-04T12:00:00.000Z" title="发表于 2023-02-04 20:00:00">2023-02-04</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/banner.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 By colour008</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to <a href="https://colour008.gitee.io/">夏雪无痕の博客</a>!<p><a target="_blank" href="https://hexo.io/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'ihhbODMDGIcbnHeVsHjGBVsL-gzGzoHsz',
+      appKey: '8mWZoALDXwN5KTJrhNzwfA1F',
+      avatar: 'hide',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script>window.$crisp = [];
+window.CRISP_WEBSITE_ID = "f56e083f-01da-482c-b79e-738028362e27";
+(function () {
+  d = document;
+  s = d.createElement("script");
+  s.src = "https://client.crisp.chat/l.js";
+  s.async = 1;
+  d.getElementsByTagName("head")[0].appendChild(s);
+})();
+$crisp.push(["safe", true])
+
+if (true) {
+  $crisp.push(["do", "chat:hide"])
+  $crisp.push(["on", "chat:closed", function() {
+    $crisp.push(["do", "chat:hide"])
+  }])
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      $crisp.push(["do", "chat:show"])
+      $crisp.push(["do", "chat:open"])
+
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      $crisp.push(["do", "chat:hide"])
+    }
+    function chatBtnShow () {
+      $crisp.push(["do", "chat:show"])
+    }
+  }
+}</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
