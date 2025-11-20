@@ -8,7 +8,7 @@
       <link href="/2025/11/19/%E9%9F%A9%E9%A1%BA%E5%B9%B3%E4%B8%80%E5%91%A8%E5%AD%A6%E4%BC%9ALinux%E7%AC%94%E8%AE%B0/"/>
       <url>/2025/11/19/%E9%9F%A9%E9%A1%BA%E5%B9%B3%E4%B8%80%E5%91%A8%E5%AD%A6%E4%BC%9ALinux%E7%AC%94%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<hr><h1 id="yi-centos-an-zhuang">一、Centos 安装</h1><h2 id="1-ji-chu-fen-qu" id="1-基础分区">1. 基础分区</h2><p>基础分区必须包含<code>boot</code><strong>（引导分区，一般分1G大小）</strong>、<code>swap</code>**（交换分区，一般分与内存相同大小）<strong>和<code>root</code></strong>（根分区，大小不限）**三个分区，一般格式化为<code>ext4</code>。</p><p><img src="https://bu.dusays.com/2025/11/19/691db6f07988d.png" alt="image-20251119202409330"></p><h2 id="2-vmware-wang-luo-lian-jie-mo-shi" id="2-Vmware网络连接模式">2. Vmware网络连接模式</h2><ul class="lvl-0"><li class="lvl-2"><p>**桥接模式：**虚拟机可以和宿主机及其他主机直接通讯，但容易造成宿主机局域网内IP冲突；</p></li><li class="lvl-2"><p>**NAT模式：**即网络地址转换模式，虚拟机通过宿主机虚拟网卡与宿主机实现通讯，不会造成宿主机局域网内的IP冲突，但是其他主机无法访问虚拟机；</p></li><li class="lvl-2"><p>**仅主机模式：**独立的系统，是一种比NAT模式更加封闭的的网络连接模式，它将创建完全包含在主机中的专用网络。</p></li></ul><blockquote><p>参考文章：<a href="https://zhuanlan.zhihu.com/p/532535216">Vmware—桥接、NAT以及仅主机模式的详细介绍和区别</a></p></blockquote><h2 id="3-xu-ni-ji-ke-long" id="3-虚拟机克隆">3. 虚拟机克隆</h2><p>如果已经安装了一台linux操作系统，还想再更多的，没必要再重新安装，只需要克隆就可以，方法如下：</p><ul class="lvl-0"><li class="lvl-2"><p>**方式1：**直接拷贝一份安装好的虚拟机文件，然后通过vmware文件→打开→选择vmx文件即可。也可跨主机实现克隆。</p></li><li class="lvl-2"><p>**方式2：**使用vmware的克隆操作，鼠标选择要克隆的系统，然后点击右键选择管理→克隆，然后按需点击下一步即可。</p><blockquote><p>注意：在进行克隆时，需要先关闭要克隆的linux系统</p></blockquote></li></ul><h2 id="4-xu-ni-ji-kuai-zhao" id="4-虚拟机快照">4. 虚拟机快照</h2><p>如果你在使用虚拟机系统的时候(比如linux)，你想回到原先的某一个状态，也就是说你担心可能有些误操作造成系统异常，需要回到原先某个正常运行的状态，vmware也提供了这样的功能，就叫快照管理。示例如下：</p><ul class="lvl-0"><li class="lvl-2"><p>安装好系统以后，先做一个快照A；</p></li><li class="lvl-2"><p>进入到系统，创建一个文件夹，再保存一个快照B；</p></li><li class="lvl-2"><p>回到系统刚刚安装好的状态，即快照A；</p></li><li class="lvl-2"><p>试试看，是否还能再次回到快照B。</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<hr><h1 id="yi-centos-an-zhuang">一、Centos 安装</h1><h2 id="1-ji-chu-fen-qu" id="1-基础分区">1. 基础分区</h2><p>基础分区必须包含<code>boot</code><strong>（引导分区，一般分1G大小）</strong>、<code>swap</code>**（交换分区，一般分与内存相同大小）<strong>和<code>root</code></strong>（根分区，大小不限）**三个分区，一般格式化为<code>ext4</code>。</p><p><img src="https://bu.dusays.com/2025/11/19/691db6f07988d.png" alt="image-20251119202409330"></p><h2 id="2-vmware-wang-luo-lian-jie-mo-shi" id="2-Vmware网络连接模式">2. Vmware网络连接模式</h2><ul class="lvl-0"><li class="lvl-2"><p><strong>桥接模式</strong>：虚拟机可以和宿主机及其他主机直接通讯，但容易造成宿主机局域网内IP冲突；</p></li><li class="lvl-2"><p><strong>NAT模式</strong>：即网络地址转换模式，虚拟机通过宿主机虚拟网卡与宿主机实现通讯，不会造成宿主机局域网内的IP冲突，但是其他主机无法访问虚拟机；</p></li><li class="lvl-2"><p><strong>仅主机模式</strong>：独立的系统，是一种比NAT模式更加封闭的的网络连接模式，它将创建完全包含在主机中的专用网络。</p></li></ul><blockquote><p>参考文章：<a href="https://zhuanlan.zhihu.com/p/532535216">Vmware—桥接、NAT以及仅主机模式的详细介绍和区别</a></p></blockquote><h2 id="3-xu-ni-ji-ke-long" id="3-虚拟机克隆">3. 虚拟机克隆</h2><p>如果已经安装了一台linux操作系统，还想再更多的，没必要再重新安装，只需要克隆就可以，方法如下：</p><ul class="lvl-0"><li class="lvl-2"><p><strong>方式1</strong>：直接拷贝一份安装好的虚拟机文件，然后通过vmware文件→打开→选择vmx文件即可。也可跨主机实现克隆。</p></li><li class="lvl-2"><p><strong>方式2</strong>：使用vmware的克隆操作，鼠标选择要克隆的系统，然后点击右键选择管理→克隆，然后按需点击下一步即可。</p><blockquote><p>注意：在进行克隆时，需要先关闭要克隆的linux系统</p></blockquote></li></ul><h2 id="4-xu-ni-ji-kuai-zhao" id="4-虚拟机快照">4. 虚拟机快照</h2><p>如果你在使用虚拟机系统的时候(比如linux)，你想回到原先的某一个状态，也就是说你担心可能有些误操作造成系统异常，需要回到原先某个正常运行的状态，vmware也提供了这样的功能，就叫快照管理。示例如下：</p><ul class="lvl-0"><li class="lvl-2"><p>安装好系统以后，先做一个快照A；</p></li><li class="lvl-2"><p>进入到系统，创建一个文件夹，再保存一个快照B；</p></li><li class="lvl-2"><p>回到系统刚刚安装好的状态，即快照A；</p></li><li class="lvl-2"><p>试试看，是否还能再次回到快照B。</p></li></ul><p><img src="https://bu.dusays.com/2025/11/20/691f099cf1475.png" alt="image-20251120202916604"></p>]]></content>
       
       
       <categories>
@@ -616,9 +616,9 @@
       
         <tags>
             
-            <tag> 学习笔记 </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> 学习笔记 </tag>
             
         </tags>
       
