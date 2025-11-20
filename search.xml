@@ -8,7 +8,7 @@
       <link href="/2025/11/19/%E9%9F%A9%E9%A1%BA%E5%B9%B3%E4%B8%80%E5%91%A8%E5%AD%A6%E4%BC%9ALinux%E7%AC%94%E8%AE%B0/"/>
       <url>/2025/11/19/%E9%9F%A9%E9%A1%BA%E5%B9%B3%E4%B8%80%E5%91%A8%E5%AD%A6%E4%BC%9ALinux%E7%AC%94%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<hr><h1 id="yi-centos-an-zhuang">一、Centos 安装</h1><h2 id="1-ji-chu-fen-qu" id="1-基础分区">1. 基础分区</h2><p>基础分区必须包含<code>boot</code><strong>（引导分区，一般分1G大小）</strong>、<code>swap</code>**（交换分区，一般分与内存相同大小）<strong>和<code>root</code></strong>（根分区，大小不限）**三个分区，一般格式化为<code>ext4</code>。</p><p><img src="https://bu.dusays.com/2025/11/19/691db6f07988d.png" alt="image-20251119202409330"></p><h2 id="2-vmware-wang-luo-lian-jie-mo-shi" id="2-Vmware网络连接模式">2. Vmware网络连接模式</h2><ul class="lvl-0"><li class="lvl-2"><p><strong>桥接模式</strong>：虚拟机可以和宿主机及其他主机直接通讯，但容易造成宿主机局域网内IP冲突；</p></li><li class="lvl-2"><p><strong>NAT模式</strong>：即网络地址转换模式，虚拟机通过宿主机虚拟网卡与宿主机实现通讯，不会造成宿主机局域网内的IP冲突，但是其他主机无法访问虚拟机；</p></li><li class="lvl-2"><p><strong>仅主机模式</strong>：独立的系统，是一种比NAT模式更加封闭的的网络连接模式，它将创建完全包含在主机中的专用网络。</p></li></ul><blockquote><p>参考文章：<a href="https://zhuanlan.zhihu.com/p/532535216">Vmware—桥接、NAT以及仅主机模式的详细介绍和区别</a></p></blockquote><h2 id="3-xu-ni-ji-ke-long" id="3-虚拟机克隆">3. 虚拟机克隆</h2><p>如果已经安装了一台linux操作系统，还想再更多的，没必要再重新安装，只需要克隆就可以，方法如下：</p><ul class="lvl-0"><li class="lvl-2"><p><strong>方式1</strong>：直接拷贝一份安装好的虚拟机文件，然后通过vmware文件→打开→选择vmx文件即可。也可跨主机实现克隆。顺便填一下，迁移的话可以直接剪切，删除的话直接删除即可。</p></li><li class="lvl-2"><p><strong>方式2</strong>：使用vmware的克隆操作，鼠标选择要克隆的系统，然后点击右键选择管理→克隆，然后按需点击下一步即可。</p><blockquote><p>注意：在进行克隆时，需要先关闭要克隆的linux系统</p></blockquote></li></ul><h2 id="4-xu-ni-ji-kuai-zhao" id="4-虚拟机快照">4. 虚拟机快照</h2><p>如果你在使用虚拟机系统的时候(比如linux)，你想回到原先的某一个状态，也就是说你担心可能有些误操作造成系统异常，需要回到原先某个正常运行的状态，vmware也提供了这样的功能，就叫快照管理。示例如下：</p><ul class="lvl-0"><li class="lvl-2"><p>安装好系统以后，先做一个快照A；</p></li><li class="lvl-2"><p>进入到系统，创建一个文件夹，再保存一个快照B；</p></li><li class="lvl-2"><p>回到系统刚刚安装好的状态，即快照A；</p></li><li class="lvl-2"><p>试试看，是否还能再次回到快照B。</p></li></ul><p><img src="https://bu.dusays.com/2025/11/20/691f099cf1475.png" alt="image-20251120202916604"></p><h2 id="5-an-zhuang-vmtools" id="5-安装vmtools">5.  安装vmtools</h2><p>vmtools安装后，可以在windows下更好的管理vm虚拟机。可以设置windows和centos的共享文件夹。步骤如下：</p><ul class="lvl-0"><li class="lvl-2"><p>进入centos点击vm菜单的→install vmware tools；</p></li><li class="lvl-2"><p>centos会出现一个vm的光驱型安装包，打开后里面有类似xx.tar.gz的压缩文件；</p></li><li class="lvl-2"><p>将xx.tar.gz拷贝到<code>/opt</code>目录；</p></li><li class="lvl-2"><p>通过终端使用<code>cd /opt</code>命令进入<code>opt</code>目录，然后使用<code>tar -zxvf  xx.tar.gz</code>命令解压,得到一个安装文件夹；</p></li><li class="lvl-2"><p>通过<code>ls</code>查看解压的产生的目录，然后<code>cd</code>到解压目录；</p></li><li class="lvl-2"><p>通过<code>ls</code>查看目录文件，然后使用<code>./vmware-install.pl</code>安装，全部按回车键使用默认设置即可，就可以安装成功。</p></li></ul><blockquote><p>注意:安装vmtools<span style="font-size:1.1em; color:#CC0000;">需要有gcc </span></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<hr><h1 id="yi-centos-an-zhuang">一、Centos 安装</h1><h2 id="1-ji-chu-fen-qu" id="1-基础分区">1. 基础分区</h2><p>基础分区必须包含<code>boot</code><strong>（引导分区，一般分1G大小）</strong>、<code>swap</code>**（交换分区，一般分与内存相同大小）<strong>和<code>root</code></strong>（根分区，大小不限）**三个分区，一般格式化为<code>ext4</code>。</p><p><img src="https://bu.dusays.com/2025/11/19/691db6f07988d.png" alt="image-20251119202409330"></p><h2 id="2-vmware-wang-luo-lian-jie-mo-shi" id="2-Vmware网络连接模式">2. Vmware网络连接模式</h2><ul class="lvl-0"><li class="lvl-2"><p><strong>桥接模式</strong>：虚拟机可以和宿主机及其他主机直接通讯，但容易造成宿主机局域网内IP冲突；</p></li><li class="lvl-2"><p><strong>NAT模式</strong>：即网络地址转换模式，虚拟机通过宿主机虚拟网卡与宿主机实现通讯，不会造成宿主机局域网内的IP冲突，但是其他主机无法访问虚拟机；</p></li><li class="lvl-2"><p><strong>仅主机模式</strong>：独立的系统，是一种比NAT模式更加封闭的的网络连接模式，它将创建完全包含在主机中的专用网络。</p></li></ul><blockquote><p>参考文章：<a href="https://zhuanlan.zhihu.com/p/532535216">Vmware—桥接、NAT以及仅主机模式的详细介绍和区别</a></p></blockquote><h2 id="3-xu-ni-ji-ke-long" id="3-虚拟机克隆">3. 虚拟机克隆</h2><p>如果已经安装了一台linux操作系统，还想再更多的，没必要再重新安装，只需要克隆就可以，方法如下：</p><ul class="lvl-0"><li class="lvl-2"><p><strong>方式1</strong>：直接拷贝一份安装好的虚拟机文件，然后通过vmware文件→打开→选择vmx文件即可。也可跨主机实现克隆。顺便填一下，迁移的话可以直接剪切，删除的话直接删除即可。</p></li><li class="lvl-2"><p><strong>方式2</strong>：使用vmware的克隆操作，鼠标选择要克隆的系统，然后点击右键选择管理→克隆，然后按需点击下一步即可。</p><blockquote><p>注意：在进行克隆时，需要先关闭要克隆的linux系统</p></blockquote></li></ul><h2 id="4-xu-ni-ji-kuai-zhao" id="4-虚拟机快照">4. 虚拟机快照</h2><p>如果你在使用虚拟机系统的时候(比如linux)，你想回到原先的某一个状态，也就是说你担心可能有些误操作造成系统异常，需要回到原先某个正常运行的状态，vmware也提供了这样的功能，就叫快照管理。示例如下：</p><ul class="lvl-0"><li class="lvl-2"><p>安装好系统以后，先做一个快照A；</p></li><li class="lvl-2"><p>进入到系统，创建一个文件夹，再保存一个快照B；</p></li><li class="lvl-2"><p>回到系统刚刚安装好的状态，即快照A；</p></li><li class="lvl-2"><p>试试看，是否还能再次回到快照B。</p></li></ul><p><img src="https://bu.dusays.com/2025/11/20/691f099cf1475.png" alt="image-20251120202916604"></p><h2 id="5-an-zhuang-vmtools" id="5-安装vmtools">5.  安装vmtools</h2><p>vmtools安装后，可以在windows下更好的管理vm虚拟机。可以设置windows和centos的共享文件夹。步骤如下：</p><ul class="lvl-0"><li class="lvl-2"><p>进入centos点击vm菜单的→install vmware tools；</p></li><li class="lvl-2"><p>centos会出现一个vm的光驱型安装包，打开后里面有类似xx.tar.gz的压缩文件；</p></li><li class="lvl-2"><p>将xx.tar.gz拷贝到<code>/opt</code>目录；</p></li><li class="lvl-2"><p>通过终端使用<code>cd /opt</code>命令进入<code>opt</code>目录，然后使用<code>tar -zxvf  xx.tar.gz</code>命令解压,得到一个安装文件夹；</p></li><li class="lvl-2"><p>通过<code>ls</code>查看解压的产生的目录，然后<code>cd</code>到解压目录；</p></li><li class="lvl-2"><p>通过<code>ls</code>查看目录文件，然后使用<code>./vmware-install.pl</code>安装，全部按<kbd>回车键</kbd>使用默认设置即可，就可以安装成功。</p></li></ul><blockquote><p>注意:安装vmtools<span style="font-size:1.1em; color:#CC0000;">需要有gcc </span></p></blockquote><p>添加共享文件夹后，在Linux系统通过打开主文件夹→其他位置→计算机→<code>mnt</code>→<code>hgfs</code>→共享文件夹名，进入到共享文件夹内。实际生产环境，通过远程方式实现文件的上传和下载。</p><p>想在<code>Ubuntu/CentOS</code>桌面直接打开文件夹，需要建立文件夹的快捷方式。方法如下:</p><p><strong>方法1</strong>：左手按住<kbd> Ctrl </kbd> +<kbd>Shift</kbd>，右手控制鼠标，将文件夹拖拽至桌面。</p><p><strong>方法2</strong>：<br>2.1 Ubuntu：进入任意终端，输入如下命令（可用<code>pwd</code>命令查询当前路径）：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">ln</span> -sT [文件夹路径] [桌面文件夹路径]</span><br><span class="line"></span><br><span class="line"><span class="comment">#例如1</span></span><br><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">ln</span> -sT /home/user_name/文件夹/ /home/user_name/桌面/文件夹</span><br><span class="line"></span><br><span class="line"><span class="comment">#例如2</span></span><br><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">ln</span> -sT /home/user_name/文件夹 /home/user_name/桌面/文件夹</span><br></pre></td></tr></table></figure><p>2.2 CentOS 7：按照2.1方法执行时如果报错<code>XXX is not in the sudoers file.  This incident will be reported.</code>，先执行<code>su</code>，再执行2.1（不输<code>sudo</code>）可解决。</p><h1 id="er-mu-lu-jie-gou">二、目录结构</h1>]]></content>
       
       
       <categories>
@@ -213,6 +213,35 @@
     
     
     <entry>
+      <title>git安装配置教程📓</title>
+      <link href="/2024/12/02/git%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/"/>
+      <url>/2024/12/02/git%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="yi-git-shi-shi-yao">一、Git是什么</h1><blockquote><p><code>Git</code>是目前世界上最先进的<a href="https://so.csdn.net/so/search?q=%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F&amp;spm=1001.2101.3001.7020">分布式版本控制系统</a>，没有之一！说到<code>Git</code>,另一个需要知道的便是<code>GitHub</code>，<code>GitHub</code>是目前使用最多的社交代码托管平台。<code>GitHub</code>，字面意思就是<code>Git</code>中心枢纽的意思，它是基于<code>Git</code>的，仅支持<code>git</code>作为唯一的版本库格式进行托管，故名<code>GitHub</code>。</p></blockquote><h1 id="er-an-zhuang-git">二、安装Git</h1><h2 id="1-xia-zai-git" id="1-下载git">1.下载git</h2><p><code>git</code>官网地址：<a href="https://git-scm.com/">https://git-scm.com/</a><br><img src="https://bu.dusays.com/2024/12/08/675522c669914.png" alt=""><br>但是如果没梯子下载会非常慢，因为服务器在国外。也可在国内校园网联合镜像站下载：<a href="https://mirrors.cernet.edu.cn/list/git-for-windows">https://mirrors.cernet.edu.cn/list/git-for-windows</a></p><h2 id="2-an-zhuang-git" id="2-安装git">2.安装git</h2><p>双击打开上面已经下好的<code>exe</code>执行文件,选择安装位置，然后都默认下一步直接安装即可。</p><p><img src="https://bu.dusays.com/2024/12/08/675522e79cdc9.png" alt=""></p><p><img src="https://bu.dusays.com/2024/12/08/6755230259fe9.png" alt=""></p><h2 id="3-jian-ce-git" id="3-检测git">3.检测git</h2><p>按键盘上的<code>win+R</code>打开运行，输入<code>cmd</code>打开终端，然后输入<code>git --version </code>查看<code>Git</code>版本信息</p><p><img src="https://bu.dusays.com/2024/12/08/6755230de9875.png" alt=""></p><h1 id="san-pei-zhi-git">三、配置Git</h1><h2 id="1-pei-zhi-ben-di-xin-xi" id="1-配置本地信息">1.配置本地信息</h2><p>为了在后面上传项目到<code>github</code>时方便知道是谁上传的，需要给本机<code>git</code>配置用户名和邮箱：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;</span><br><span class="line">git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure><p>打开 <code>git bash</code>（也可任意位置右键打开 <code>git bash</code>）：</p><p><img src="https://bu.dusays.com/2024/12/08/675523331e38f.png" alt=""><br><strong>查看配置命令：<code>git config --list</code></strong></p><h2 id="2-pei-zhi-ssh" id="2-配置SSH">2.配置SSH</h2><h3 id="1-ssh-yu-ssh-key-shi-shi-yao" id="（1）SSH与SSH-Key是什么？">（1）SSH与SSH Key是什么？</h3><p>要了解<code>SSH key</code>简介，首先得熟悉<code>SSH</code>(Secure Shell的缩写 ) 是一个允许两台电脑之间通过安全的连接进行数据交换的网络协议。<code>SSH </code>密钥对可以让您方便的登录到 <code>SSH </code>服务器，而无需输入密码。<code>SSH </code>密钥对总是成双出现的，一把公钥，一把私钥。这里用到了非对称公钥加密体系，生成的公钥放到<code>github</code>的网站上，生成的私钥放在自己的电脑上。</p><h3 id="2-sheng-cheng-ssh-key" id="（2）生成SSH-Key">（2）生成SSH Key</h3><p><code>ssh key</code>生成命令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C “注册邮箱”</span><br><span class="line">//执行后一直回车即可</span><br></pre></td></tr></table></figure><p><img src="https://bu.dusays.com/2024/12/08/6755233f56f87.png" alt=""></p><h3 id="3-huo-qu-ssh-key-gong-yao-nei-rong-id-rsa-pub" id="（3）获取ssh-key公钥内容（id-rsa-pub）">（3）获取ssh key公钥内容（id_rsa.pub）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure><p>如下图所示，复制该内容</p><p><img src="https://bu.dusays.com/2024/12/08/6755234ca7b92.png" alt=""></p><h3 id="4-github-zhang-hao-shang-tian-jia-gong-yao" id="（4）Github账号上添加公钥">（4）Github账号上添加公钥</h3><p>打开个人的<code>Github</code>主页，进入<code>Settings</code>设置</p><p><img src="https://bu.dusays.com/2024/12/08/67552360128ba.png" alt=""><br>添加<code>ssh key</code>，把刚才复制的内容粘贴上去保存即可</p><p><img src="https://bu.dusays.com/2024/12/08/6755236ea47bd.png" alt=""><br><img src="https://bu.dusays.com/2024/12/08/6755238740260.png" alt=""></p><h3 id="5-yan-zheng-shi-fou-pei-zhi-cheng-gong" id="（5）验证是否配置成功">（5）验证是否配置成功</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>显示如下信息表明设置成功</p><p><img src="https://bu.dusays.com/2024/12/30/677290645f430.png" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Syncthing多平台文件同步工具部署安装教程🍉</title>
       <link href="/2024/12/02/Syncthing%E5%A4%9A%E5%B9%B3%E5%8F%B0%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
       <url>/2024/12/02/Syncthing%E5%A4%9A%E5%B9%B3%E5%8F%B0%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
@@ -265,35 +294,6 @@
             <tag> 教程 </tag>
             
             <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>git安装配置教程📓</title>
-      <link href="/2024/12/02/git%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/"/>
-      <url>/2024/12/02/git%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/</url>
-      
-        <content type="html"><![CDATA[<hr><h1 id="yi-git-shi-shi-yao">一、Git是什么</h1><blockquote><p><code>Git</code>是目前世界上最先进的<a href="https://so.csdn.net/so/search?q=%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F&amp;spm=1001.2101.3001.7020">分布式版本控制系统</a>，没有之一！说到<code>Git</code>,另一个需要知道的便是<code>GitHub</code>，<code>GitHub</code>是目前使用最多的社交代码托管平台。<code>GitHub</code>，字面意思就是<code>Git</code>中心枢纽的意思，它是基于<code>Git</code>的，仅支持<code>git</code>作为唯一的版本库格式进行托管，故名<code>GitHub</code>。</p></blockquote><h1 id="er-an-zhuang-git">二、安装Git</h1><h2 id="1-xia-zai-git" id="1-下载git">1.下载git</h2><p><code>git</code>官网地址：<a href="https://git-scm.com/">https://git-scm.com/</a><br><img src="https://bu.dusays.com/2024/12/08/675522c669914.png" alt=""><br>但是如果没梯子下载会非常慢，因为服务器在国外。也可在国内校园网联合镜像站下载：<a href="https://mirrors.cernet.edu.cn/list/git-for-windows">https://mirrors.cernet.edu.cn/list/git-for-windows</a></p><h2 id="2-an-zhuang-git" id="2-安装git">2.安装git</h2><p>双击打开上面已经下好的<code>exe</code>执行文件,选择安装位置，然后都默认下一步直接安装即可。</p><p><img src="https://bu.dusays.com/2024/12/08/675522e79cdc9.png" alt=""></p><p><img src="https://bu.dusays.com/2024/12/08/6755230259fe9.png" alt=""></p><h2 id="3-jian-ce-git" id="3-检测git">3.检测git</h2><p>按键盘上的<code>win+R</code>打开运行，输入<code>cmd</code>打开终端，然后输入<code>git --version </code>查看<code>Git</code>版本信息</p><p><img src="https://bu.dusays.com/2024/12/08/6755230de9875.png" alt=""></p><h1 id="san-pei-zhi-git">三、配置Git</h1><h2 id="1-pei-zhi-ben-di-xin-xi" id="1-配置本地信息">1.配置本地信息</h2><p>为了在后面上传项目到<code>github</code>时方便知道是谁上传的，需要给本机<code>git</code>配置用户名和邮箱：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;</span><br><span class="line">git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure><p>打开 <code>git bash</code>（也可任意位置右键打开 <code>git bash</code>）：</p><p><img src="https://bu.dusays.com/2024/12/08/675523331e38f.png" alt=""><br><strong>查看配置命令：<code>git config --list</code></strong></p><h2 id="2-pei-zhi-ssh" id="2-配置SSH">2.配置SSH</h2><h3 id="1-ssh-yu-ssh-key-shi-shi-yao" id="（1）SSH与SSH-Key是什么？">（1）SSH与SSH Key是什么？</h3><p>要了解<code>SSH key</code>简介，首先得熟悉<code>SSH</code>(Secure Shell的缩写 ) 是一个允许两台电脑之间通过安全的连接进行数据交换的网络协议。<code>SSH </code>密钥对可以让您方便的登录到 <code>SSH </code>服务器，而无需输入密码。<code>SSH </code>密钥对总是成双出现的，一把公钥，一把私钥。这里用到了非对称公钥加密体系，生成的公钥放到<code>github</code>的网站上，生成的私钥放在自己的电脑上。</p><h3 id="2-sheng-cheng-ssh-key" id="（2）生成SSH-Key">（2）生成SSH Key</h3><p><code>ssh key</code>生成命令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C “注册邮箱”</span><br><span class="line">//执行后一直回车即可</span><br></pre></td></tr></table></figure><p><img src="https://bu.dusays.com/2024/12/08/6755233f56f87.png" alt=""></p><h3 id="3-huo-qu-ssh-key-gong-yao-nei-rong-id-rsa-pub" id="（3）获取ssh-key公钥内容（id-rsa-pub）">（3）获取ssh key公钥内容（id_rsa.pub）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure><p>如下图所示，复制该内容</p><p><img src="https://bu.dusays.com/2024/12/08/6755234ca7b92.png" alt=""></p><h3 id="4-github-zhang-hao-shang-tian-jia-gong-yao" id="（4）Github账号上添加公钥">（4）Github账号上添加公钥</h3><p>打开个人的<code>Github</code>主页，进入<code>Settings</code>设置</p><p><img src="https://bu.dusays.com/2024/12/08/67552360128ba.png" alt=""><br>添加<code>ssh key</code>，把刚才复制的内容粘贴上去保存即可</p><p><img src="https://bu.dusays.com/2024/12/08/6755236ea47bd.png" alt=""><br><img src="https://bu.dusays.com/2024/12/08/6755238740260.png" alt=""></p><h3 id="5-yan-zheng-shi-fou-pei-zhi-cheng-gong" id="（5）验证是否配置成功">（5）验证是否配置成功</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>显示如下信息表明设置成功</p><p><img src="https://bu.dusays.com/2024/12/30/677290645f430.png" alt="在这里插入图片描述"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-          <category> Git </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 教程 </tag>
-            
-            <tag> Git </tag>
             
         </tags>
       
@@ -627,39 +627,6 @@
     
     
     <entry>
-      <title>VSCode 常用快捷键和一些使用技巧💻</title>
-      <link href="/2023/01/20/VSCode%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
-      <url>/2023/01/20/VSCode%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
-      
-        <content type="html"><![CDATA[<hr><h1 id="xi-tong-he-ruan-ying-jian">系统和软硬件</h1><blockquote><p>系统版本：win10</p><p>软件版本：VScode 1.74.3</p><p>硬件：台式机</p></blockquote><h1 id="yi-ru-he-zai-v-scode-zhong-qi-yong-shi-yong-shu-biao-xuan-ze-xing-lie">一、如何在VScode中启用使用鼠标选择行列</h1><p>1.首先打开VScode，进入编辑窗口。</p><p>2.之后点击上方的“文件”菜单。</p><p><img src="https://bu.dusays.com/2024/12/08/6755216ebd191.png" alt="图1"></p><p>3.在下拉子菜单中，依次点击“首选项”中的“设置”项。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217353c22.png" alt="图2-1"></p><p><img src="https://bu.dusays.com/2024/12/08/675521775333d.png" alt="图2-2"></p><p>4.最后在设置页面中，搜索并勾选“<code>Column Selection</code>”栏的方框，即可启用使用鼠标选择行列。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217b74bf2.png" alt="图3"></p><p>5.返回编辑界面，长按鼠标不松手向下拖动，可实现同时选择多行，有利于同时删除或者添加代码。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217f2e279.png" alt="图4"></p><blockquote><p>Tips：此设置便于前端代码修改和书写，但是C语言等建议不开启，可按住Shift+Alt+按住鼠标可实现同样的效果。</p></blockquote><h1 id="er-vs-code-chang-yong-kuai-jie-jian">二、VSCode 常用快捷键</h1><h2 id="1-kuai-su-fu-zhi-yi-xing" id="1-快速复制一行">1. 快速复制一行</h2><blockquote><p>快捷键： shift+alt+ 下箭头 / 上箭头 或者 ctrl+c 然后 ctrl+v</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a5b6c23.gif" alt="图1"></p><h2 id="2-xuan-ding-duo-ge-xiang-tong-de-dan-ci" id="2-选定多个相同的单词">2. 选定多个相同的单词</h2><blockquote><p>快捷键： ctrl + d</p><p>先将光标置于选定单词后双击鼠标左键，然后按下 ctrl + d 可以往下依次选择相同的单词。 这样同时修改相同的单词就非常方便</p><p>快捷键： ctrl + shift + l</p><p>先将光标置于选定单词后双击鼠标左键，然后按下 ctrl + shift + l 可以同时选中相同的单词。 这样同时修改相同的单词就非常方便</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a5ba4d3.gif" alt="图2"></p><p><img src="https://bu.dusays.com/2025/01/05/677a74a5ec48b.gif" alt="图3"></p><h2 id="3-quan-ju-ti-huan-mou-xie-dan-ci" id="3-全局替换某写单词">3. 全局替换某写单词</h2><blockquote><p>当我们一个页面需要修改大量相同的文字的时候，我们一个的修改超级麻烦，此时我们可以使用全局替换</p><p>快捷键： ctrl + h 注意选择全部替换即可</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a8ebcc8.gif" alt="图4"></p><h2 id="4-kuai-su-ding-wei-dao-mou-yi-xing" id="4-快速定位到某一行">4. 快速定位到某一行</h2><blockquote><p>当我们页面比较长的时候，上下滚动页面布方便，其实我们可以利用快捷键，快速的调到指定的行数上。</p><p>快捷键： ctrl + g</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a6c29e4.gif" alt="图5"></p><h2 id="5-fang-da-suo-xiao-zheng-ge-bian-ji-qi-jie-mian" id="5-放大缩小整个编辑器界面">5. 放大缩小整个编辑器界面</h2><blockquote><p>快捷键： ctrl + + /-</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a844d41.gif" alt="图6"></p><h2 id="6-tian-jia-duo-ge-guang-biao" id="6-添加多个光标">6. 添加多个光标</h2><blockquote><p>快捷键： Ctrl + Alt + 上箭头 / 下箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a925088.gif" alt="图7"></p><h2 id="7-xuan-ze-mou-ge-qu-kuai" id="7-选择某个区块">7. 选择某个区块</h2><blockquote><p>可以选择一个区块进行操作</p><p>快捷键： 按住 alt + shift 然后拖动鼠标</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ab27dfe.gif" alt="图8"></p><blockquote><p>也可以添加多个光标</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a98a101.gif" alt="图9"></p><h2 id="8-xuan-zhong-xing" id="8-选中行">8. 选中行</h2><blockquote><p>快捷键： 按住 alt + shift + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74aa908d5.gif" alt="图10"></p><h2 id="9-guang-biao-ding-wei-dao-dan-ci-shou-dan-ci-wei" id="9-光标定位到单词首-单词尾">9. 光标定位到单词首 / 单词尾</h2><blockquote><p>快捷键 Ctrl + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ad090d8.gif" alt="图11"></p><h2 id="10-xuan-zhong-dan-ci" id="10-选中单词">10. 选中单词</h2><blockquote><p>快捷键 Ctrl + shift + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ae4bd16.gif" alt="图12"></p><h2 id="11-guang-biao-ding-wei-dao-xing-shou-xing-mo" id="11-光标定位到行首-行末">11. 光标定位到行首 / 行末</h2><blockquote><p>快捷键 Home/End</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74af0fa73.gif" alt="图13"></p><h2 id="12-ding-ji-cao-zuo" id="12-顶级操作">12. 顶级操作</h2><p><img src="https://bu.dusays.com/2025/01/05/677a74b172e46.gif" alt="图14"></p><h2 id="13-zi-ding-yi-kuai-jie-jian" id="13-自定义快捷键">13. 自定义快捷键</h2><blockquote><p>有些快捷键，我们使用不习惯，其实我们可以自定义快捷键的。</p><p>比如 js 的多行注释是 shift + alt + a ，我们想修改为 ctrl + shfit + /</p><p>设置方法： 管理按钮 — 键盘快捷方式 — 输入 shift + alt + a 找到这个快捷键 ----- 点击编辑按钮 ---- 直接按下 ctrl + shift + /---- 最后按下回车 修改完毕。</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74b27aac0.gif" alt="图15"></p><p>直接按下<code> ctrl + shift + /</code>---- 最后按下回车 修改完毕。</p><h1 id="san-vs-code-de-yi-xie-shi-yong-ji-qiao">三、VSCode 的一些使用技巧</h1><h2 id="1-v-scode-zhong-shan-chu-kong-bai-xing" id="1-VScode-中删除空白行">1. VScode 中删除空白行</h2><blockquote><p>使用 VScode 的查找替换功能，用正则表达式 <code>^\s*(?=\r?$)\n</code> 查找出所有空白行后，使用替换功能删除所有空白行</p></blockquote><p>1-1 按快捷键 <code>Ctrl+H</code>, 召唤以下编辑面板</p><p><img src="https://bu.dusays.com/2025/01/05/677a74b022965.png" alt="图1"></p><p>1-2 在查找中粘贴以下正则表达式 <code>^\s*(?=\r?$)\n</code>, 点击右侧 <code>*</code> 号使用正则表达式查找，点击全部替换即可</p><p><img src="https://bu.dusays.com/2025/01/05/677a74b1dad57.gif" alt="图2"></p><h2 id="2-vs-code-da-kai-guan-bi-bian-ji-qu-yu-ding-bu-gu-ding-qu-yu" id="2-VSCode-打开关闭编辑区域顶部固定区域">2.VSCode 打开关闭编辑区域顶部固定区域</h2><p>VSCode升级1.86.2后，编辑区域顶部多了一块固定内容，可以快速定位。但是对应笔记本电脑小屏幕来说有点占位置，可以右击取消选中<a href="https://so.csdn.net/so/search?q=Sticky&amp;spm=1001.2101.3001.7020">Sticky</a> Scroll。</p><p><img src="https://bu.dusays.com/2025/04/16/67ff8cae746f6.png" alt="在这里插入图片描述"></p><p>想要<strong>开启</strong>，从Setting中搜索sticky scroll，找到Editor中的勾选上即可。</p><p><img src="https://bu.dusays.com/2025/04/16/67ff8cae9e0b4.png" alt="在这里插入图片描述"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-          <category> VSCode </category>
-          
-          <category> 操作 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 教程 </tag>
-            
-            <tag> VSCode </tag>
-            
-            <tag> 快捷键 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>VSCode在Windows系统配置C和C++环境💻</title>
       <link href="/2023/01/20/VSCode%E5%9C%A8Windows%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEC%E5%92%8CC++%E7%8E%AF%E5%A2%83/"/>
       <url>/2023/01/20/VSCode%E5%9C%A8Windows%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEC%E5%92%8CC++%E7%8E%AF%E5%A2%83/</url>
@@ -685,6 +652,39 @@
             <tag> VSCode </tag>
             
             <tag> C/C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VSCode 常用快捷键和一些使用技巧💻</title>
+      <link href="/2023/01/20/VSCode%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+      <url>/2023/01/20/VSCode%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="xi-tong-he-ruan-ying-jian">系统和软硬件</h1><blockquote><p>系统版本：win10</p><p>软件版本：VScode 1.74.3</p><p>硬件：台式机</p></blockquote><h1 id="yi-ru-he-zai-v-scode-zhong-qi-yong-shi-yong-shu-biao-xuan-ze-xing-lie">一、如何在VScode中启用使用鼠标选择行列</h1><p>1.首先打开VScode，进入编辑窗口。</p><p>2.之后点击上方的“文件”菜单。</p><p><img src="https://bu.dusays.com/2024/12/08/6755216ebd191.png" alt="图1"></p><p>3.在下拉子菜单中，依次点击“首选项”中的“设置”项。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217353c22.png" alt="图2-1"></p><p><img src="https://bu.dusays.com/2024/12/08/675521775333d.png" alt="图2-2"></p><p>4.最后在设置页面中，搜索并勾选“<code>Column Selection</code>”栏的方框，即可启用使用鼠标选择行列。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217b74bf2.png" alt="图3"></p><p>5.返回编辑界面，长按鼠标不松手向下拖动，可实现同时选择多行，有利于同时删除或者添加代码。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217f2e279.png" alt="图4"></p><blockquote><p>Tips：此设置便于前端代码修改和书写，但是C语言等建议不开启，可按住Shift+Alt+按住鼠标可实现同样的效果。</p></blockquote><h1 id="er-vs-code-chang-yong-kuai-jie-jian">二、VSCode 常用快捷键</h1><h2 id="1-kuai-su-fu-zhi-yi-xing" id="1-快速复制一行">1. 快速复制一行</h2><blockquote><p>快捷键： shift+alt+ 下箭头 / 上箭头 或者 ctrl+c 然后 ctrl+v</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a5b6c23.gif" alt="图1"></p><h2 id="2-xuan-ding-duo-ge-xiang-tong-de-dan-ci" id="2-选定多个相同的单词">2. 选定多个相同的单词</h2><blockquote><p>快捷键： ctrl + d</p><p>先将光标置于选定单词后双击鼠标左键，然后按下 ctrl + d 可以往下依次选择相同的单词。 这样同时修改相同的单词就非常方便</p><p>快捷键： ctrl + shift + l</p><p>先将光标置于选定单词后双击鼠标左键，然后按下 ctrl + shift + l 可以同时选中相同的单词。 这样同时修改相同的单词就非常方便</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a5ba4d3.gif" alt="图2"></p><p><img src="https://bu.dusays.com/2025/01/05/677a74a5ec48b.gif" alt="图3"></p><h2 id="3-quan-ju-ti-huan-mou-xie-dan-ci" id="3-全局替换某写单词">3. 全局替换某写单词</h2><blockquote><p>当我们一个页面需要修改大量相同的文字的时候，我们一个的修改超级麻烦，此时我们可以使用全局替换</p><p>快捷键： ctrl + h 注意选择全部替换即可</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a8ebcc8.gif" alt="图4"></p><h2 id="4-kuai-su-ding-wei-dao-mou-yi-xing" id="4-快速定位到某一行">4. 快速定位到某一行</h2><blockquote><p>当我们页面比较长的时候，上下滚动页面布方便，其实我们可以利用快捷键，快速的调到指定的行数上。</p><p>快捷键： ctrl + g</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a6c29e4.gif" alt="图5"></p><h2 id="5-fang-da-suo-xiao-zheng-ge-bian-ji-qi-jie-mian" id="5-放大缩小整个编辑器界面">5. 放大缩小整个编辑器界面</h2><blockquote><p>快捷键： ctrl + + /-</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a844d41.gif" alt="图6"></p><h2 id="6-tian-jia-duo-ge-guang-biao" id="6-添加多个光标">6. 添加多个光标</h2><blockquote><p>快捷键： Ctrl + Alt + 上箭头 / 下箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a925088.gif" alt="图7"></p><h2 id="7-xuan-ze-mou-ge-qu-kuai" id="7-选择某个区块">7. 选择某个区块</h2><blockquote><p>可以选择一个区块进行操作</p><p>快捷键： 按住 alt + shift 然后拖动鼠标</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ab27dfe.gif" alt="图8"></p><blockquote><p>也可以添加多个光标</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a98a101.gif" alt="图9"></p><h2 id="8-xuan-zhong-xing" id="8-选中行">8. 选中行</h2><blockquote><p>快捷键： 按住 alt + shift + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74aa908d5.gif" alt="图10"></p><h2 id="9-guang-biao-ding-wei-dao-dan-ci-shou-dan-ci-wei" id="9-光标定位到单词首-单词尾">9. 光标定位到单词首 / 单词尾</h2><blockquote><p>快捷键 Ctrl + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ad090d8.gif" alt="图11"></p><h2 id="10-xuan-zhong-dan-ci" id="10-选中单词">10. 选中单词</h2><blockquote><p>快捷键 Ctrl + shift + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ae4bd16.gif" alt="图12"></p><h2 id="11-guang-biao-ding-wei-dao-xing-shou-xing-mo" id="11-光标定位到行首-行末">11. 光标定位到行首 / 行末</h2><blockquote><p>快捷键 Home/End</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74af0fa73.gif" alt="图13"></p><h2 id="12-ding-ji-cao-zuo" id="12-顶级操作">12. 顶级操作</h2><p><img src="https://bu.dusays.com/2025/01/05/677a74b172e46.gif" alt="图14"></p><h2 id="13-zi-ding-yi-kuai-jie-jian" id="13-自定义快捷键">13. 自定义快捷键</h2><blockquote><p>有些快捷键，我们使用不习惯，其实我们可以自定义快捷键的。</p><p>比如 js 的多行注释是 shift + alt + a ，我们想修改为 ctrl + shfit + /</p><p>设置方法： 管理按钮 — 键盘快捷方式 — 输入 shift + alt + a 找到这个快捷键 ----- 点击编辑按钮 ---- 直接按下 ctrl + shift + /---- 最后按下回车 修改完毕。</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74b27aac0.gif" alt="图15"></p><p>直接按下<code> ctrl + shift + /</code>---- 最后按下回车 修改完毕。</p><h1 id="san-vs-code-de-yi-xie-shi-yong-ji-qiao">三、VSCode 的一些使用技巧</h1><h2 id="1-v-scode-zhong-shan-chu-kong-bai-xing" id="1-VScode-中删除空白行">1. VScode 中删除空白行</h2><blockquote><p>使用 VScode 的查找替换功能，用正则表达式 <code>^\s*(?=\r?$)\n</code> 查找出所有空白行后，使用替换功能删除所有空白行</p></blockquote><p>1-1 按快捷键 <code>Ctrl+H</code>, 召唤以下编辑面板</p><p><img src="https://bu.dusays.com/2025/01/05/677a74b022965.png" alt="图1"></p><p>1-2 在查找中粘贴以下正则表达式 <code>^\s*(?=\r?$)\n</code>, 点击右侧 <code>*</code> 号使用正则表达式查找，点击全部替换即可</p><p><img src="https://bu.dusays.com/2025/01/05/677a74b1dad57.gif" alt="图2"></p><h2 id="2-vs-code-da-kai-guan-bi-bian-ji-qu-yu-ding-bu-gu-ding-qu-yu" id="2-VSCode-打开关闭编辑区域顶部固定区域">2.VSCode 打开关闭编辑区域顶部固定区域</h2><p>VSCode升级1.86.2后，编辑区域顶部多了一块固定内容，可以快速定位。但是对应笔记本电脑小屏幕来说有点占位置，可以右击取消选中<a href="https://so.csdn.net/so/search?q=Sticky&amp;spm=1001.2101.3001.7020">Sticky</a> Scroll。</p><p><img src="https://bu.dusays.com/2025/04/16/67ff8cae746f6.png" alt="在这里插入图片描述"></p><p>想要<strong>开启</strong>，从Setting中搜索sticky scroll，找到Editor中的勾选上即可。</p><p><img src="https://bu.dusays.com/2025/04/16/67ff8cae9e0b4.png" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+          <category> VSCode </category>
+          
+          <category> 操作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> VSCode </tag>
+            
+            <tag> 快捷键 </tag>
             
         </tags>
       
