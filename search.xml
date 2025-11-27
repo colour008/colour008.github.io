@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>基于Linux系统一键搭建本地文件服务器📥️</title>
+      <link href="/2025/11/27/%E5%9F%BA%E4%BA%8ELinux%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <url>/2025/11/27/%E5%9F%BA%E4%BA%8ELinux%E7%B3%BB%E7%BB%9F%E4%B8%80%E9%94%AE%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<hr><blockquote><p>转载于油管大佬<span style="font-style:italic; color:#FF3333;">悟空的日常</span><a href="https://www.youtube.com/watch?v=aD0jZe3Aw-Q">视频教程</a>，大佬的<a href="https://www.youtube.com/@wukongdaily">油管主页</a>，请支持一下！</p></blockquote><h2 id="yi-zhun-bei-gong-zuo" id="一、准备工作">一、准备工作</h2><ul class="lvl-0"><li class="lvl-2"><p>一台Linux服务器，可以是CentOS、Ubuntu等Linux发行版，也可以是OpenWrt或飞牛NAS等系统，服务器最好能科学上网；</p></li><li class="lvl-2"><p>服务器已安装docker；</p></li><li class="lvl-2"><p>SSH连接工具。</p></li></ul><blockquote><p>博主用装有Ubuntu 24.04的J4125服务器进行演示。</p></blockquote><h2 id="er-an-zhuang-bu-zou" id="二、安装步骤">二、安装步骤</h2><p>1.用SSH连接服务器，切换到<code>root</code>用户，在服务器内<code>/opt</code>目录下新建一个文件夹（也可以是其他目录，推荐<code>/opt</code>，飞牛NAS可以在共享文件夹新建目录，然后复制文件夹路径在下面步骤备用），命名为<code>fileserver</code>（可以任意命名）；</p><p>2.给<code>fileserver</code>文件夹读写权限；</p><p><img src="https://bu.dusays.com/2025/11/27/6928511206e75.png" alt="image-20251127212428103"></p><p>3.然后<code>CD</code>进入<code>fileserver</code>文件夹，用悟空大佬一键部署脚本进行安装，命令如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://getindex.netlify.app/init.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure><blockquote><p>注意：安装前确保你的服务器<code>18080</code>端口未被占用，如果已被占用，那么先访问悟空大佬的项目<a href="https://github.com/wukongdaily/index%EF%BC%8C%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E4%B8%AD%60nginx%60%E7%9B%AE%E5%BD%95%E4%B8%8B%60docker-compose.yml%60%E7%9A%84%E7%AB%AF%E5%8F%A3%E4%B8%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%AA%E4%BD%BF%E7%94%A8%E7%9A%84%E7%AB%AF%E5%8F%A3%EF%BC%8C%E7%84%B6%E5%90%8E%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8%60start.sh%60%E8%84%9A%E6%9C%AC%E8%BF%9B%E8%A1%8C%E9%83%A8%E7%BD%B2%E3%80%82">https://github.com/wukongdaily/index，修改项目中`nginx`目录下`docker-compose.yml`的端口为服务器未使用的端口，然后在本地启动`start.sh`脚本进行部署。</a></p></blockquote><p>博主服务器<code>18080</code>端口未被占用，在线安装过程如图所示：</p><p><img src="https://bu.dusays.com/2025/11/27/692851d0312b8.png" alt="image-20251127212745308"></p><p>安装完成后，<code>fileserver</code>文件夹下就会存在如下文件夹及文件：</p><p><img src="https://bu.dusays.com/2025/11/27/69285252ba040.png" alt="image-20251127212956076"></p><p>4.将你需要分享的文件上传到<code>abc</code>文件夹内，然后在浏览器内输入<a href="http://xn--IP-fr5c86lx7z:18080/%EF%BC%8C%E4%BB%A5%E5%8D%9A%E4%B8%BB%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BA%E4%BE%8B%EF%BC%8C%E8%BE%93%E5%85%A5http://192.168.5.20:18080/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8web%E9%A1%B5%E9%9D%A2%EF%BC%8C%E7%82%B9%E5%87%BB%E6%96%87%E4%BB%B6%E5%8D%B3%E5%8F%AF%E6%BB%A1%E9%80%9F%E4%B8%8B%E8%BD%BD%EF%BC%8C%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%EF%BC%9A">http://服务器IP:18080/，以博主服务器为例，输入http://192.168.5.20:18080/，就可以访问文件服务器web页面，点击文件即可满速下载，如下图所示：</a></p><p><img src="https://bu.dusays.com/2025/11/27/6928554829271.png" alt="image-20251127214233349"></p><p>5.如果想通过外网访问，有公网IP的直接设置端口映射即可，其他网络可以使用内网穿透工具即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Markdown扩展语法⌨️</title>
       <link href="/2025/11/22/Markdown%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/"/>
       <url>/2025/11/22/Markdown%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95/</url>
