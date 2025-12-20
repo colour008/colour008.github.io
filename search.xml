@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>Windows系统通用修复命令📒</title>
+      <link href="/2025/12/16/2025-11-19-Windows%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E4%BF%AE%E5%A4%8D%E5%91%BD%E4%BB%A4/"/>
+      <url>/2025/12/16/2025-11-19-Windows%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%94%A8%E4%BF%AE%E5%A4%8D%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<hr><blockquote><p>适用产品：台式机，笔记本</p><p>适用版本：Windows 10, Windows 11</p></blockquote><p>当 Windows 系统出现问题，使用 Windows 系统自带的通用修复命令可以第一时间排查以下问题。</p><p>操作步骤：</p><ol><li class="lvl-3"><p>在任务栏中点击搜索图标，在搜索框中输入<code>cmd</code>，点击<strong>以管理员身份运行</strong>。</p></li><li class="lvl-3"><p>根据故障现象，选择对应的操作步骤，在窗口中输入命令（建议直接复制、粘贴命令完成），按<kbd>Enter</kbd>键确认。</p></li></ol><h2 id="yi-windows-xi-tong-wen-ti-tong-yong-xiu-fu-ming-ling" id="一、Windows系统问题通用修复命令">一、Windows系统问题通用修复命令</h2><p>依次输入下列修复命令：</p><ol><li class="lvl-3"><p>检查系统映像健康：<code>Dism.exe /Online /Cleanup-image /CheckHealth</code>，按<kbd>Enter</kbd>键确认。</p></li><li class="lvl-3"><p>检查系统映像完整：<code>DISM.exe /Online /Cleanup-image /Scanhealth</code>，按<kbd>Enter</kbd>键确认。</p></li><li class="lvl-3"><p>修复系统映像：<code>DISM.exe /Online /Cleanup-image /Restorehealth</code>，按<kbd>Enter</kbd>键确认。</p></li><li class="lvl-3"><p>修复系统文件：<code>sfc /scannow</code>，按<kbd>Enter</kbd>键确认。</p></li></ol><ul class="lvl-0"><li class="lvl-2"><p>每个“/”前需输入空格。</p></li><li class="lvl-2"><p>若修复一半出现卡死的情况，不需要全部重新执行命令，只需重新执行当前命令即可。</p></li><li class="lvl-2"><p>若一直修复失败，说明系统的自动修复命令无法解决当前系统文件损坏问题，建议开机按<kbd>F10</kbd>恢复出厂设置。</p></li></ul><blockquote><p>检查、修复 Windows 系统</p></blockquote><h2 id="er-windows-xi-tong-ci-pan-wen-ti-tong-yong-xiu-fu-ming-ling" id="二、Windows系统磁盘问题通用修复命令">二、Windows系统磁盘问题通用修复命令</h2><p>使用此命令将会扫描硬盘中的逻辑错误和坏扇区。如果在硬盘驱动器上发现坏扇区，<code>chkdsk</code>会自动修复坏扇区，但该硬盘的数据可能会丢失，请注意提前备份数据。</p><p><strong>操作步骤：</strong></p><p>如果需要检查C盘，请输入:<code> chkdsk /r C:</code>，按<kbd>Enter</kbd>键确认。<code>C:</code>指的是驱动器号，若需要检查其他盘，请将<code>C:</code>替换为对应盘符。例如：检查D盘，则输入：<code>chkdsk /r D:</code>。</p><blockquote><p>检测修复磁盘分区的分区表与磁盘文件等</p></blockquote><h2 id="san-windows-xi-tong-dian-yuan-ji-hua-yi-chang-tong-yong-xiu-fu-ming-ling" id="三、Windows系统电源计划异常通用修复命令">三、Windows系统电源计划异常通用修复命令</h2><p>输入：<code>powercfg –restoredefaultschemes</code>，按<kbd>Enter</kbd>键确认。</p><blockquote><p>将电源管理计划还原到初始状态</p></blockquote><p>以上命令建议使用复制粘贴的方式输入，如手动输入，请注意符号“/”及符号“-”前面有一个空格符。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 知识库 </category>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+            <tag> 修复 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux安装minio并设置开机自启📒</title>
+      <link href="/2025/12/15/2025-12-15-Linux%E5%AE%89%E8%A3%85minio%E5%B9%B6%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/"/>
+      <url>/2025/12/15/2025-12-15-Linux%E5%AE%89%E8%A3%85minio%E5%B9%B6%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/</url>
+      
+        <content type="html"><![CDATA[<hr><h2 id="1-an-zhuang" id="1-安装">1. 安装</h2><hr><blockquote><p>转载自<a href="https://blog.csdn.net/qq_24950043/article/details/136068964">https://blog.csdn.net/qq_24950043/article/details/136068964</a></p></blockquote><h2 id="yi-xia-zai-bing-an-zhuang" id="一、下载并安装">一、下载并安装</h2><p>1.创建<code>minio</code>文件夹，以及后续存储数据和日志的文件夹</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/minio</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">存储数据目录</span></span><br><span class="line">mkdir -p /data/minio/data</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">存储日志目录</span></span><br><span class="line">mkdir -p /data/minio/log</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置文件存储目录</span></span><br><span class="line">mkdir -p /data/minio/conf</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入创建的目录</span></span><br><span class="line">cd /data/minio</span><br></pre></td></tr></table></figure><p>2.下载<code>minio</code>二进制文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.min.io/server/minio/release/linux-amd64/minio</span><br></pre></td></tr></table></figure><p>3.将下载的<code>minio</code>文件添加可执行文件权限</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x minio</span><br></pre></td></tr></table></figure><p>4.创建配置文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /data/minio/conf/minio.conf</span><br></pre></td></tr></table></figure><p>按<kbd>i</kbd>键插入配置内容：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MINIO_VOLUMES=&quot;/data/minio/data&quot;</span><br><span class="line">MINIO_OPTS=&quot;-C /data/minio/conf --address 0.0.0.0:9000 --console-address 0.0.0.0:9001&quot;</span><br><span class="line">MINIO_ROOT_USER=admin</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建的密码长度至少8位，否则无法启动</span></span><br><span class="line">MINIO_ROOT_PASSWORD=xxx%123456</span><br></pre></td></tr></table></figure><p>5.创建系统启动服务脚本</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/systemd/system/minio.service</span><br></pre></td></tr></table></figure><p>按<kbd>i</kbd>键插入脚本内容</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Minio</span><br><span class="line">Documentation=https://docs.min.io</span><br><span class="line">Wants=network-online.target</span><br><span class="line">After=network-online.target</span><br><span class="line">[Service]</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">User and group</span></span><br><span class="line">User=root</span><br><span class="line">Group=root</span><br><span class="line">EnvironmentFile=/data/minio/conf/minio.conf</span><br><span class="line">ExecStart=/data/minio/minio server $MINIO_OPTS </span><br><span class="line">ExecReload=/bin/kill -HUP $MAINPID</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Let systemd restart this service always</span></span><br><span class="line">Restart=always</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Specifies the maximum file descriptor number that can be opened by this process</span></span><br><span class="line">LimitNOFILE=65536</span><br><span class="line">TimeoutStopSec=5</span><br><span class="line">SendSIGKILL=no</span><br><span class="line">SuccessExitStatus=0 1</span><br><span class="line">StandardOutput=syslog</span><br><span class="line">StandardError=syslog</span><br><span class="line">SyslogIdentifier=minio</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure><p>6.启动<code>minio</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动</span></span><br><span class="line">systemctl start minio</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止</span></span><br><span class="line">systemctl stop minio</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看状态（正常应显示 active (running)）</span></span><br><span class="line">systemctl status minio</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重载服务脚本</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl reload minio</span><br></pre></td></tr></table></figure><p>7.查看启动状态，如下图表示启动成功</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看状态（正常应显示 active (running)）</span></span><br><span class="line">systemctl status minio</span><br></pre></td></tr></table></figure><p><img src="https://bu.dusays.com/2025/12/16/69413beeaff87.png" alt="在这里插入图片描述"></p><p>8.访问<code>minio</code>，端口是脚本中设置的<code>9001</code>端口：<a href="http://192.168.6.25:9001/login">http://192.168.6.25:9001/login</a></p><p>这里账号就用上述第4部设置的账号密码</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MINIO_ROOT_USER=admin</span><br><span class="line">MINIO_ROOT_PASSWORD=xxx@123456</span><br></pre></td></tr></table></figure><p><img src="https://bu.dusays.com/2025/12/16/69413beecefe2.png" alt="在这里插入图片描述"></p><p>9.如下则安装并登陆成功，后续可以根据自己的需要创建桶配置权限等<br><img src="https://bu.dusays.com/2025/12/16/69413beec195e.png" alt="在这里插入图片描述"></p><p>10.因为我们这里要使用<code>java</code>连接<code>minio</code>。因此我们还需要创建一个<code>access key</code>，点击进入<code>Access Keys</code>，点击<code>Create access key</code></p><p><img src="https://bu.dusays.com/2025/12/16/69413beec4d7d.png" alt="在这里插入图片描述"></p><p>11.填写相关信息，其中<code>accesskey</code>可以自定义或者用系统自动生成的</p><p><img src="https://bu.dusays.com/2025/12/16/69413beec6c1c.png" alt="在这里插入图片描述"></p><p>12.生成的<code>accessKey</code>和<code>secretKey</code>一定要妥善保管，后续<code>client</code>端连接<code>minio</code>就通过该信息<br><img src="https://bu.dusays.com/2025/12/16/69413bf0220d3.png" alt="在这里插入图片描述"></p><h2 id="er-she-zhi-kai-ji-zi-qi" id="二、设置开机自启">二、设置开机自启</h2><p>1.因为我们上述已经创建了<code>systemctl</code>启动脚本了，将该服务加入开机自启列表就行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启用开机自启</span></span><br><span class="line">systemctl enable minio</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看服务是否已启用开机自启</span></span><br><span class="line">systemctl is-enabled minio</span><br></pre></td></tr></table></figure><p>输出 <code>enabled</code> → 说明开机自启已配置成功；若输出 <code>disabled</code>，重新执行上面的<code>enable</code>命令。</p><p>2.重启服务器，查看服务是否自动启动</p><p><img src="https://bu.dusays.com/2025/12/16/69413bf03528a.png" alt="在这里插入图片描述"></p><h3 id="san-qi-dong-guo-cheng-zhong-rong-yi-yu-dao-de-yi-xie-wen-ti" id="三、启动过程中容易遇到的一些问题">三、启动过程中容易遇到的一些问题</h3><h4 id="systemd-qi-dong-xian-zhi-zhong-zhi-lin-shi-jie-jue-start-limit-hit" id="systemd-启动限制重置（临时解决-start-limit-hit）">systemd 启动限制重置（临时解决 start-limit-hit）</h4><p>Minio 服务启动反复失败，将会触发<code>systemd</code>的启动次数限制（start-limit-hit），如果遇到此类问题，先重置失败次数，再重新加载服务配置：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 重置systemd启动限制</span></span><br><span class="line">systemctl reset-failed minio</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 重新加载服务文件（若修改过minio.service）</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 尝试手动启动</span></span><br><span class="line">systemctl start minio</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 再次查看状态</span></span><br><span class="line">systemctl status minio</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 知识库 </category>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> minio </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Kali Linux下载及虚拟机安装配置教程📒</title>
       <link href="/2025/12/14/2025-12-14-Kali-Linux%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/"/>
       <url>/2025/12/14/2025-12-14-Kali-Linux%E4%B8%8B%E8%BD%BD%E5%8F%8A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/</url>
@@ -735,37 +793,6 @@
     
     
     <entry>
-      <title>VSCode 常用快捷键和一些使用技巧💻</title>
-      <link href="/2023/01/20/VSCode%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
-      <url>/2023/01/20/VSCode%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
-      
-        <content type="html"><![CDATA[<hr><h1 id="xi-tong-he-ruan-ying-jian">系统和软硬件</h1><blockquote><p>系统版本：win10</p><p>软件版本：VScode 1.74.3</p><p>硬件：台式机</p></blockquote><h1 id="yi-ru-he-zai-v-scode-zhong-qi-yong-shi-yong-shu-biao-xuan-ze-xing-lie">一、如何在VScode中启用使用鼠标选择行列</h1><p>1.首先打开VScode，进入编辑窗口。</p><p>2.之后点击上方的“文件”菜单。</p><p><img src="https://bu.dusays.com/2024/12/08/6755216ebd191.png" alt="图1"></p><p>3.在下拉子菜单中，依次点击“首选项”中的“设置”项。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217353c22.png" alt="图2-1"></p><p><img src="https://bu.dusays.com/2024/12/08/675521775333d.png" alt="图2-2"></p><p>4.最后在设置页面中，搜索并勾选“<code>Column Selection</code>”栏的方框，即可启用使用鼠标选择行列。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217b74bf2.png" alt="图3"></p><p>5.返回编辑界面，长按鼠标不松手向下拖动，可实现同时选择多行，有利于同时删除或者添加代码。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217f2e279.png" alt="图4"></p><blockquote><p>Tips：此设置便于前端代码修改和书写，但是C语言等建议不开启，可按住Shift+Alt+按住鼠标可实现同样的效果。</p></blockquote><h1 id="er-vs-code-chang-yong-kuai-jie-jian">二、VSCode 常用快捷键</h1><h2 id="1-kuai-su-fu-zhi-yi-xing" id="1-快速复制一行">1. 快速复制一行</h2><blockquote><p>快捷键： shift+alt+ 下箭头 / 上箭头 或者 ctrl+c 然后 ctrl+v</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a5b6c23.gif" alt="图1"></p><h2 id="2-xuan-ding-duo-ge-xiang-tong-de-dan-ci" id="2-选定多个相同的单词">2. 选定多个相同的单词</h2><blockquote><p>快捷键： ctrl + d</p><p>先将光标置于选定单词后双击鼠标左键，然后按下 ctrl + d 可以往下依次选择相同的单词。 这样同时修改相同的单词就非常方便</p><p>快捷键： ctrl + shift + l</p><p>先将光标置于选定单词后双击鼠标左键，然后按下 ctrl + shift + l 可以同时选中相同的单词。 这样同时修改相同的单词就非常方便</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a5ba4d3.gif" alt="图2"></p><p><img src="https://bu.dusays.com/2025/01/05/677a74a5ec48b.gif" alt="图3"></p><h2 id="3-quan-ju-ti-huan-mou-xie-dan-ci" id="3-全局替换某写单词">3. 全局替换某写单词</h2><blockquote><p>当我们一个页面需要修改大量相同的文字的时候，我们一个的修改超级麻烦，此时我们可以使用全局替换</p><p>快捷键： ctrl + h 注意选择全部替换即可</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a8ebcc8.gif" alt="图4"></p><h2 id="4-kuai-su-ding-wei-dao-mou-yi-xing" id="4-快速定位到某一行">4. 快速定位到某一行</h2><blockquote><p>当我们页面比较长的时候，上下滚动页面布方便，其实我们可以利用快捷键，快速的调到指定的行数上。</p><p>快捷键： ctrl + g</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a6c29e4.gif" alt="图5"></p><h2 id="5-fang-da-suo-xiao-zheng-ge-bian-ji-qi-jie-mian" id="5-放大缩小整个编辑器界面">5. 放大缩小整个编辑器界面</h2><blockquote><p>快捷键： ctrl + + /-</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a844d41.gif" alt="图6"></p><h2 id="6-tian-jia-duo-ge-guang-biao" id="6-添加多个光标">6. 添加多个光标</h2><blockquote><p>快捷键： Ctrl + Alt + 上箭头 / 下箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a925088.gif" alt="图7"></p><h2 id="7-xuan-ze-mou-ge-qu-kuai" id="7-选择某个区块">7. 选择某个区块</h2><blockquote><p>可以选择一个区块进行操作</p><p>快捷键： 按住 alt + shift 然后拖动鼠标</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ab27dfe.gif" alt="图8"></p><blockquote><p>也可以添加多个光标</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a98a101.gif" alt="图9"></p><h2 id="8-xuan-zhong-xing" id="8-选中行">8. 选中行</h2><blockquote><p>快捷键： 按住 alt + shift + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74aa908d5.gif" alt="图10"></p><h2 id="9-guang-biao-ding-wei-dao-dan-ci-shou-dan-ci-wei" id="9-光标定位到单词首-单词尾">9. 光标定位到单词首 / 单词尾</h2><blockquote><p>快捷键 Ctrl + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ad090d8.gif" alt="图11"></p><h2 id="10-xuan-zhong-dan-ci" id="10-选中单词">10. 选中单词</h2><blockquote><p>快捷键 Ctrl + shift + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ae4bd16.gif" alt="图12"></p><h2 id="11-guang-biao-ding-wei-dao-xing-shou-xing-mo" id="11-光标定位到行首-行末">11. 光标定位到行首 / 行末</h2><blockquote><p>快捷键 Home/End</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74af0fa73.gif" alt="图13"></p><h2 id="12-ding-ji-cao-zuo" id="12-顶级操作">12. 顶级操作</h2><p><img src="https://bu.dusays.com/2025/01/05/677a74b172e46.gif" alt="图14"></p><h2 id="13-zi-ding-yi-kuai-jie-jian" id="13-自定义快捷键">13. 自定义快捷键</h2><blockquote><p>有些快捷键，我们使用不习惯，其实我们可以自定义快捷键的。</p><p>比如 js 的多行注释是 shift + alt + a ，我们想修改为 ctrl + shfit + /</p><p>设置方法： 管理按钮 — 键盘快捷方式 — 输入 shift + alt + a 找到这个快捷键 ----- 点击编辑按钮 ---- 直接按下 ctrl + shift + /---- 最后按下回车 修改完毕。</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74b27aac0.gif" alt="图15"></p><p>直接按下<code> ctrl + shift + /</code>---- 最后按下回车 修改完毕。</p><h1 id="san-vs-code-de-yi-xie-shi-yong-ji-qiao">三、VSCode 的一些使用技巧</h1><h2 id="1-v-scode-zhong-shan-chu-kong-bai-xing" id="1-VScode-中删除空白行">1. VScode 中删除空白行</h2><blockquote><p>使用 VScode 的查找替换功能，用正则表达式 <code>^\s*(?=\r?$)\n</code> 查找出所有空白行后，使用替换功能删除所有空白行</p></blockquote><p>1-1 按快捷键 <code>Ctrl+H</code>, 召唤以下编辑面板</p><p><img src="https://bu.dusays.com/2025/01/05/677a74b022965.png" alt="图1"></p><p>1-2 在查找中粘贴以下正则表达式 <code>^\s*(?=\r?$)\n</code>, 点击右侧 <code>*</code> 号使用正则表达式查找，点击全部替换即可</p><p><img src="https://bu.dusays.com/2025/01/05/677a74b1dad57.gif" alt="图2"></p><h2 id="2-vs-code-da-kai-guan-bi-bian-ji-qu-yu-ding-bu-gu-ding-qu-yu" id="2-VSCode-打开关闭编辑区域顶部固定区域">2.VSCode 打开关闭编辑区域顶部固定区域</h2><p>VSCode升级1.86.2后，编辑区域顶部多了一块固定内容，可以快速定位。但是对应笔记本电脑小屏幕来说有点占位置，可以右击取消选中<a href="https://so.csdn.net/so/search?q=Sticky&amp;spm=1001.2101.3001.7020">Sticky</a> Scroll。</p><p><img src="https://bu.dusays.com/2025/04/16/67ff8cae746f6.png" alt="在这里插入图片描述"></p><p>想要<strong>开启</strong>，从Setting中搜索sticky scroll，找到Editor中的勾选上即可。</p><p><img src="https://bu.dusays.com/2025/04/16/67ff8cae9e0b4.png" alt="在这里插入图片描述"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 知识库 </category>
-          
-          <category> VSCode </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 教程 </tag>
-            
-            <tag> VSCode </tag>
-            
-            <tag> 快捷键 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>VSCode在Windows系统配置C和C++环境💻</title>
       <link href="/2023/01/20/VSCode%E5%9C%A8Windows%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEC%E5%92%8CC++%E7%8E%AF%E5%A2%83/"/>
       <url>/2023/01/20/VSCode%E5%9C%A8Windows%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AEC%E5%92%8CC++%E7%8E%AF%E5%A2%83/</url>
@@ -789,6 +816,37 @@
             <tag> VSCode </tag>
             
             <tag> C/C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VSCode 常用快捷键和一些使用技巧💻</title>
+      <link href="/2023/01/20/VSCode%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+      <url>/2023/01/20/VSCode%20%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%92%8C%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="xi-tong-he-ruan-ying-jian">系统和软硬件</h1><blockquote><p>系统版本：win10</p><p>软件版本：VScode 1.74.3</p><p>硬件：台式机</p></blockquote><h1 id="yi-ru-he-zai-v-scode-zhong-qi-yong-shi-yong-shu-biao-xuan-ze-xing-lie">一、如何在VScode中启用使用鼠标选择行列</h1><p>1.首先打开VScode，进入编辑窗口。</p><p>2.之后点击上方的“文件”菜单。</p><p><img src="https://bu.dusays.com/2024/12/08/6755216ebd191.png" alt="图1"></p><p>3.在下拉子菜单中，依次点击“首选项”中的“设置”项。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217353c22.png" alt="图2-1"></p><p><img src="https://bu.dusays.com/2024/12/08/675521775333d.png" alt="图2-2"></p><p>4.最后在设置页面中，搜索并勾选“<code>Column Selection</code>”栏的方框，即可启用使用鼠标选择行列。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217b74bf2.png" alt="图3"></p><p>5.返回编辑界面，长按鼠标不松手向下拖动，可实现同时选择多行，有利于同时删除或者添加代码。</p><p><img src="https://bu.dusays.com/2024/12/08/6755217f2e279.png" alt="图4"></p><blockquote><p>Tips：此设置便于前端代码修改和书写，但是C语言等建议不开启，可按住Shift+Alt+按住鼠标可实现同样的效果。</p></blockquote><h1 id="er-vs-code-chang-yong-kuai-jie-jian">二、VSCode 常用快捷键</h1><h2 id="1-kuai-su-fu-zhi-yi-xing" id="1-快速复制一行">1. 快速复制一行</h2><blockquote><p>快捷键： shift+alt+ 下箭头 / 上箭头 或者 ctrl+c 然后 ctrl+v</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a5b6c23.gif" alt="图1"></p><h2 id="2-xuan-ding-duo-ge-xiang-tong-de-dan-ci" id="2-选定多个相同的单词">2. 选定多个相同的单词</h2><blockquote><p>快捷键： ctrl + d</p><p>先将光标置于选定单词后双击鼠标左键，然后按下 ctrl + d 可以往下依次选择相同的单词。 这样同时修改相同的单词就非常方便</p><p>快捷键： ctrl + shift + l</p><p>先将光标置于选定单词后双击鼠标左键，然后按下 ctrl + shift + l 可以同时选中相同的单词。 这样同时修改相同的单词就非常方便</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a5ba4d3.gif" alt="图2"></p><p><img src="https://bu.dusays.com/2025/01/05/677a74a5ec48b.gif" alt="图3"></p><h2 id="3-quan-ju-ti-huan-mou-xie-dan-ci" id="3-全局替换某写单词">3. 全局替换某写单词</h2><blockquote><p>当我们一个页面需要修改大量相同的文字的时候，我们一个的修改超级麻烦，此时我们可以使用全局替换</p><p>快捷键： ctrl + h 注意选择全部替换即可</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a8ebcc8.gif" alt="图4"></p><h2 id="4-kuai-su-ding-wei-dao-mou-yi-xing" id="4-快速定位到某一行">4. 快速定位到某一行</h2><blockquote><p>当我们页面比较长的时候，上下滚动页面布方便，其实我们可以利用快捷键，快速的调到指定的行数上。</p><p>快捷键： ctrl + g</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a6c29e4.gif" alt="图5"></p><h2 id="5-fang-da-suo-xiao-zheng-ge-bian-ji-qi-jie-mian" id="5-放大缩小整个编辑器界面">5. 放大缩小整个编辑器界面</h2><blockquote><p>快捷键： ctrl + + /-</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a844d41.gif" alt="图6"></p><h2 id="6-tian-jia-duo-ge-guang-biao" id="6-添加多个光标">6. 添加多个光标</h2><blockquote><p>快捷键： Ctrl + Alt + 上箭头 / 下箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a925088.gif" alt="图7"></p><h2 id="7-xuan-ze-mou-ge-qu-kuai" id="7-选择某个区块">7. 选择某个区块</h2><blockquote><p>可以选择一个区块进行操作</p><p>快捷键： 按住 alt + shift 然后拖动鼠标</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ab27dfe.gif" alt="图8"></p><blockquote><p>也可以添加多个光标</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74a98a101.gif" alt="图9"></p><h2 id="8-xuan-zhong-xing" id="8-选中行">8. 选中行</h2><blockquote><p>快捷键： 按住 alt + shift + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74aa908d5.gif" alt="图10"></p><h2 id="9-guang-biao-ding-wei-dao-dan-ci-shou-dan-ci-wei" id="9-光标定位到单词首-单词尾">9. 光标定位到单词首 / 单词尾</h2><blockquote><p>快捷键 Ctrl + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ad090d8.gif" alt="图11"></p><h2 id="10-xuan-zhong-dan-ci" id="10-选中单词">10. 选中单词</h2><blockquote><p>快捷键 Ctrl + shift + 左箭头 / 右箭头</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74ae4bd16.gif" alt="图12"></p><h2 id="11-guang-biao-ding-wei-dao-xing-shou-xing-mo" id="11-光标定位到行首-行末">11. 光标定位到行首 / 行末</h2><blockquote><p>快捷键 Home/End</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74af0fa73.gif" alt="图13"></p><h2 id="12-ding-ji-cao-zuo" id="12-顶级操作">12. 顶级操作</h2><p><img src="https://bu.dusays.com/2025/01/05/677a74b172e46.gif" alt="图14"></p><h2 id="13-zi-ding-yi-kuai-jie-jian" id="13-自定义快捷键">13. 自定义快捷键</h2><blockquote><p>有些快捷键，我们使用不习惯，其实我们可以自定义快捷键的。</p><p>比如 js 的多行注释是 shift + alt + a ，我们想修改为 ctrl + shfit + /</p><p>设置方法： 管理按钮 — 键盘快捷方式 — 输入 shift + alt + a 找到这个快捷键 ----- 点击编辑按钮 ---- 直接按下 ctrl + shift + /---- 最后按下回车 修改完毕。</p></blockquote><p><img src="https://bu.dusays.com/2025/01/05/677a74b27aac0.gif" alt="图15"></p><p>直接按下<code> ctrl + shift + /</code>---- 最后按下回车 修改完毕。</p><h1 id="san-vs-code-de-yi-xie-shi-yong-ji-qiao">三、VSCode 的一些使用技巧</h1><h2 id="1-v-scode-zhong-shan-chu-kong-bai-xing" id="1-VScode-中删除空白行">1. VScode 中删除空白行</h2><blockquote><p>使用 VScode 的查找替换功能，用正则表达式 <code>^\s*(?=\r?$)\n</code> 查找出所有空白行后，使用替换功能删除所有空白行</p></blockquote><p>1-1 按快捷键 <code>Ctrl+H</code>, 召唤以下编辑面板</p><p><img src="https://bu.dusays.com/2025/01/05/677a74b022965.png" alt="图1"></p><p>1-2 在查找中粘贴以下正则表达式 <code>^\s*(?=\r?$)\n</code>, 点击右侧 <code>*</code> 号使用正则表达式查找，点击全部替换即可</p><p><img src="https://bu.dusays.com/2025/01/05/677a74b1dad57.gif" alt="图2"></p><h2 id="2-vs-code-da-kai-guan-bi-bian-ji-qu-yu-ding-bu-gu-ding-qu-yu" id="2-VSCode-打开关闭编辑区域顶部固定区域">2.VSCode 打开关闭编辑区域顶部固定区域</h2><p>VSCode升级1.86.2后，编辑区域顶部多了一块固定内容，可以快速定位。但是对应笔记本电脑小屏幕来说有点占位置，可以右击取消选中<a href="https://so.csdn.net/so/search?q=Sticky&amp;spm=1001.2101.3001.7020">Sticky</a> Scroll。</p><p><img src="https://bu.dusays.com/2025/04/16/67ff8cae746f6.png" alt="在这里插入图片描述"></p><p>想要<strong>开启</strong>，从Setting中搜索sticky scroll，找到Editor中的勾选上即可。</p><p><img src="https://bu.dusays.com/2025/04/16/67ff8cae9e0b4.png" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 知识库 </category>
+          
+          <category> VSCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> VSCode </tag>
+            
+            <tag> 快捷键 </tag>
             
         </tags>
       
